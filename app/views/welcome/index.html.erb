@@ -4,16 +4,22 @@
       <a href="#" id="logo">Recipe.box</a>
       <nav>
         <ul>
+          <% unless user_signed_in? %>
           <li><a href="#">Explore</a></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Create a Recipe</a></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <li><%= link_to "Create a Recipe", new_user_registration_path %></li>
+          <% else %>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Explore</a></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %><li>
+          <% end %>
         </ul>
       </nav>
     </div>
   </header>
   <div id="wrapper_skinny">
     <h1>Add your awesome recipes<br>or create your own.</h1>
-    <a href="#" class="button button_highlight">Create a Recipe List</a>
+    <%= link_to "Create a Recipe", new_user_registration_path, class: "button button_highlight" %>
     <a href="#" class="button button_white">Explore</a>
   </div>
 </div>
