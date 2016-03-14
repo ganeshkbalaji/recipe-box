@@ -3,6 +3,7 @@ $green: #001900;
 $white: #FFFFFF;
 $highlight: #d2674e;
 $dark: #22292e;
+$light: #EDEFF5;
 
 .wrapper_wide {
   width: 90%;
@@ -56,5 +57,102 @@ $dark: #22292e;
     background: darken($white, 7.5%)
   }
 }
+
+#banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 4rem;
+  h1 {
+    text-align: center;
+    color: $white;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 8rem 0;
+  }
+}
+
+
+.podcasts_banner {
+  background-image: image-url("podcasts_banner.jpg");
+}
+
+.sign_in_banner {
+  background-image: image-url("sign_in_banner.png");
+}
+
+.sign_up_banner {
+  background-image: image-url("sign_up_banner.png");
+}
+
+.pagination:before, .pagination:after {
+  content: " ";
+  display: table;
+}
+
+.pagination:after {
+  clear: both;
+}
+
+.pagination {
+  text-align: center;
+  margin: 1rem 0 5rem 0;
+  a, .previous_page, .current, .next_page {
+    padding: 0.75rem 1rem;
+    margin: 0 .25rem;
+    border-radius: .15rem;
+    line-height: 1.25;
+    text-decoration: none;
+    background: #EDEFF5;
+    font-weight: 700;
+    font-size: .7rem;
+    font-style: normal;
+    color: $dark;
+    &:hover {
+      background: $highlight;
+      color: $white;
+    }
+  }
+  .current {
+    background: $highlight;
+    color: $white;
+  }
+  .disabled {
+    color: #C0C0C0;
+    &:hover {
+      color: #C0C0C0;
+      background: #EDEFF5;
+    }
+  }
+}
+
+
+
+.field {
+  margin: .5rem 0 1.5rem 0;
+}
+
+input[type="email"], input[type="text"], input[type="password"], textarea {
+  width: 100%;
+  height: 2.5rem;
+  padding: .25rem 1rem;
+  background: $light;
+  border: 1px solid darken($light, 5%);
+  border-radius: .35rem;
+  margin-top: .5rem;
+}
+
+textarea {
+  min-height: 8rem;
+  margin-top: .5rem !important;
+}
+
+#form {
+  padding: 0 0 5rem 0;
+}
+
+
 @import 'normalize';
 @import 'welcome';
